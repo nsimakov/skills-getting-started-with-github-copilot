@@ -27,9 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (details.participants.length === 0) {
           participantsHTML += `<li class="no-participants">No one yet!</li>`;
         } else {
-          details.participants.forEach(p => {
-            participantsHTML += `<li>${p}</li>`;
-          });
+          participantsHTML += details.participants.map(p => `<li>${p}</li>`).join('');
         }
         participantsHTML += `</ul></div>`;
 
