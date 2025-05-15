@@ -20,15 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const spotsLeft = details.max_participants - details.participants.length;
 
-        // Ugly participants list
-        let participantsHTML = `<div style="background:yellow;color:red;padding:3px;border:2px dashed green;margin-top:7px;">
-          <strong style="font-size:18px;text-decoration:underline;">Participants:</strong>
-          <ul style="margin-left:30px;list-style-type:square;font-family:'Comic Sans MS', cursive,sans-serif;font-size:15px;">`;
+        // Pretty participants list
+        let participantsHTML = `<div class="participants-section">
+          <strong>Participants:</strong>
+          <ul class="participants-list">`;
         if (details.participants.length === 0) {
-          participantsHTML += `<li style="color:blue;">No one yet!</li>`;
+          participantsHTML += `<li class="no-participants">No one yet!</li>`;
         } else {
           details.participants.forEach(p => {
-            participantsHTML += `<li style="margin-bottom:2px;">${p}</li>`;
+            participantsHTML += `<li>${p}</li>`;
           });
         }
         participantsHTML += `</ul></div>`;
